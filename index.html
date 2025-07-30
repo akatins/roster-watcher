@@ -8,9 +8,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>✈️ Roster Watcher Active</h1>
-  <p>Auto-scanning for open shifts (DDO, BLANK, GRD, ALV)...</p>
+  <h1>✈️ Roster Watcher</h1>
+  <label>
+    <input type="checkbox" id="silentToggle"> Silent Mode
+  </label>
+  <p>Scanning every 60 seconds...</p>
   <audio id="cashTone" src="cash-register.mp3" preload="auto"></audio>
   <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
 </body>
 </html>
